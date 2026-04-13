@@ -41,14 +41,21 @@ cd backend
 pip install -r requirements.txt
 ```
 
-### 4. Start the backend
 
+### 4. Start the backend
+ 
 ```bash
 uvicorn main:app --reload --port 8000
 ```
-
-On first run, Chroma will embed all wine rows and persist them to `./chroma_db/`.  
-Subsequent starts skip embedding and load directly from disk.
+ 
+On first run, Chroma will embed all wine rows and persist them to `./chroma_db/`.
+**This can take a few minutes on the first startup.** Wait for the message:
+ 
+```
+INFO:     Application startup complete.
+```
+ 
+before sending any requests. Subsequent starts skip embedding and load directly from disk.
 
 ### 5. Open the app
 
