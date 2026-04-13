@@ -1,0 +1,11 @@
+fastapi
+uvicorn[standard]
+langchain
+langchain-anthropic
+langchain-huggingface
+langchain-chroma
+chromadb
+sentence-transformers
+anthropic
+pandas
+python-dotenv
