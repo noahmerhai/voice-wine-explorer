@@ -71,6 +71,13 @@ def build_chain():
             persist_directory=CHROMA_DIR,
             embedding_function=embeddings,
         )
+        if vectorstore._collection.count() == 0:
+            documents = _load_documents()
+            vectorstore = Chroma.from_documents(
+                documents=documents,
+                embedding=embeddings,
+                persist_directory=CHROMA_DIR,
+            )
     else:
         documents = _load_documents()
         vectorstore = Chroma.from_documents(

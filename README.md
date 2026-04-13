@@ -50,16 +50,15 @@ uvicorn main:app --reload --port 8000
 On first run, Chroma will embed all wine rows and persist them to `./chroma_db/`.  
 Subsequent starts skip embedding and load directly from disk.
 
-### 5. Open the frontend
+### 5. Open the app
 
-Open `frontend/index.html` directly in Chrome or Edge (Web Speech API support required).
+FastAPI serves both the frontend and API. Open:
 
-> **Note**: Chrome may block microphone access for `file://` URLs. If so, serve the file locally:
-> ```bash
-> cd frontend
-> python -m http.server 5500
-> # then visit http://localhost:5500
-> ```
+```text
+http://localhost:8000/
+```
+
+In GitHub Codespaces, open the forwarded URL for port `8000`.
 
 ---
 
